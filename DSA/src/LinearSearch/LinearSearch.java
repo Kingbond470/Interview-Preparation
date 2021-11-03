@@ -5,8 +5,8 @@ public class LinearSearch {
     public static void main(String[] args) {
 
         int[] arr = {23, 44, 56, 4, 64, 35, 9, 87};
-        int target = 4;
-        System.out.println(linearSearch(arr, target));
+        int target = 64;
+        System.out.println(linearSearchElement(arr, target));
 
     }
 
@@ -27,6 +27,25 @@ public class LinearSearch {
         // element does not exist in array
         return -1;
     }
+
+    // 2
+    // from an array: if element found then return the element
+    // otherwise return Integer.MAX_VALUE
+
+    static int linearSearchElement(int[] arr, int target){
+
+        // if array size is zero then return Integer.MAX_VALUE
+        if(arr.length==0) return Integer.MAX_VALUE;
+
+        //run a loop and if element found then return the element
+        for(int element: arr){
+            if(element==target) return element;
+        }
+
+        // element did not found
+        return Integer.MAX_VALUE ;
+    }
+
 }
 
 /*
