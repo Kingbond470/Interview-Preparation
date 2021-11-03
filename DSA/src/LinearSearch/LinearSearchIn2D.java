@@ -15,6 +15,8 @@ public class LinearSearchIn2D {
         int target = 90;
         int[] ans = searchIn2D(arr, target);
         System.out.println(Arrays.toString(ans));
+        System.out.println(searchMaxIn2D(arr));
+        System.out.println(searchMinIn2D(arr));
 
     }
 
@@ -34,6 +36,36 @@ public class LinearSearchIn2D {
         // element was not found
         return new int[]{-1, -1};
 
+    }
+
+    // finding a max element
+    static int searchMaxIn2D(int[][] arr) {
+
+        // assume, size is array is not zero,
+        int max = arr[0][0];
+
+        // run a loop: return max element
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr[row].length; col++) {
+                if (arr[row][col] > max) max = arr[row][col];
+            }
+        }
+        return max;
+    }
+
+    // finding min using for each
+    static int searchMinIn2D(int[][] arr) {
+        int min = arr[0][0];
+
+        // in each, 2D array : it contains a single one D array as well
+        // run a loop : return min
+        for (int[] row : arr) {
+            for (int element : row) {
+                if (element < min) min = element;
+            }
+        }
+
+        return min;
     }
 
 
