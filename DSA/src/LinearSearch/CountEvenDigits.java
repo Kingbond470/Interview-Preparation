@@ -24,8 +24,18 @@ public class CountEvenDigits {
 
     // to check the count of number is even or not
      static boolean countEventDigits(int num) {
+       /*
         String str=num+"";
         int length=str.length();
         return length%2==0;
+        */
+
+         // without using string
+         int count=0;
+         while(num>0){
+             count++;
+             num=num/10;
+         }
+         return count%2==0;
     }
 }
