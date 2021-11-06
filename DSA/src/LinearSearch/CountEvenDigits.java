@@ -12,14 +12,19 @@ public class CountEvenDigits {
     // to calculate the total even digits of number in array
     static int countTotalEvenDigits(int[] nums){
         int count=0;
-
         for( int num: nums){
-
-            if(countEventDigits(num)){
+            if(countEvenDigits(num)){
                 count++;
             }
         }
         return count;
+    }
+
+    // to check the count to number is even or not with optimize approach
+    static boolean countEvenDigits(int num){
+        if(num<0) num=num*-1;
+        int val= (int)Math.log10(num)+1;
+        return val%2==0;
     }
 
     // to check the count of number is even or not
