@@ -5,8 +5,8 @@ public class ReverseArray {
     public static void main(String[] args) {
 
         int[] arr = {12, 34, 35, 65, 7};
-        reverseArray(arr);
-
+        // reverseArray(arr);
+        int[] res = reverseArrayUsingNewArray(arr);
         /*
          index - 0 , 1
          start - 12 , 34
@@ -14,7 +14,7 @@ public class ReverseArray {
          arr - 7, 65, 35, 34, 12
          */
 
-        for (int element : arr) {
+        for (int element : res) {
             System.out.print(element + " ");
         }
     }
@@ -35,5 +35,17 @@ public class ReverseArray {
         }
         return arr;
     }
+    // TC - O(n) SC - O(1)
+
+    // creating new array, and storing each value from reverse order
+    static int[] reverseArrayUsingNewArray(int[] ar) {
+        int[] res = new int[ar.length];
+        int i = 0;
+        for (int index = ar.length - 1; index >= 0; index--) {
+            res[i++] = ar[index];
+        }
+        return res;
+    }
+    // TC - O(n) SC - O(n)
 
 }
