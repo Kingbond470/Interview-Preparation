@@ -6,8 +6,20 @@ public class CountEvenDigits {
     public static void main(String[] args) {
         int[] nums={12, 234, 6, 76, 45356};
 
-        System.out.println(countTotalEvenDigits(nums));
+        System.out.println(countTotalEven(nums));
     }
+
+    // to calculate the total even digits of number im array
+    static int countTotalEven(int[] nums){
+        int count=0;
+        for(int element: nums){
+            if(element>=10 && element<100 || element>=1000 && element<10000 || element>=100000 && element<1000000){
+                count++;
+            }
+        }
+        return count;
+    }
+
 
     // to calculate the total even digits of number in array
     static int countTotalEvenDigits(int[] nums){
