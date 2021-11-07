@@ -8,7 +8,6 @@ public class OrderDiagnosticBinarySearch {
         System.out.println(orderDiagnosticBinarySearch(arr, target));
     }
 
-
     // when the order of array is not known - ascending / descending order
     // to find the order and target element
     static int orderDiagnosticBinarySearch(int[] arr, int target) {
